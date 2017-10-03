@@ -25,7 +25,7 @@ class Neural_net:
 		self.b2=tf.Variable(initial_value=tf.random_normal([1,10], stddev=0.01),name="b2")
 		z1=tf.matmul(x,self.W1)+self.b1
 		a1=tf.nn.relu(z1)
-		#a1=tf.nn.dropout(a1,0.5)
+		a1=tf.nn.dropout(a1,0.5)
 		a2=tf.matmul(a1,self.W2)+self.b2
 		return a2
 if __name__=="__main__":
